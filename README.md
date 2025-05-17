@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 기술 블로그
 
-## Getting Started
+## 개발 프로세스
 
-First, run the development server:
+### 25.05.17
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. next.js 프로젝트 생성
+2. 기본 레이아웃 잡기
+   - GNB, Sidebar, MainContainer
+   -
+3. Pretendard 폰트 적용
+
+   - public 폴더에 다운받은 가변 폰트(Variable) 파일 추가
+   - `global.css` 파일에 @font-face로 웹 폰트 정의 및 전체 적용
+
+```
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/PretendardVariable.woff2") format("woff2-variations");
+  font-weight: 45 920;
+  font-display: swap;
+}
+
+html {
+  font-family: "Pretendard", sans-serif;
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   - `브라우저 > 계산됨 탭 최하단 > 렌더링된 글꼴`에서 글꼴 적용 여부 확인 가능
+   - tailwind prittier 적용해서 클래스명 정렬
+     - 안되면 vscode 껐다 키기
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+// prettier.config.js 추가
+module.exports = {
+  plugins: ["prettier-plugin-tailwindcss"],
+};
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
