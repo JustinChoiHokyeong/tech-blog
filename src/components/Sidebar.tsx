@@ -31,9 +31,9 @@ export const Sidebar = () => {
               <SidebarHeader />
               <Navigation setOpen={setOpen} />
             </div>
-            <div onClick={() => isMobile() && setOpen(false)}>
+            {/* <div onClick={() => isMobile() && setOpen(false)}>
               <Badge href="/resume" text="Read Resume" />
-            </div>
+            </div> */}
           </motion.div>
         )}
       </AnimatePresence>
@@ -78,7 +78,7 @@ export const Navigation = ({
         </Link>
       ))}
 
-      <Heading as="p" className="text-sm md:text-sm lg:text-sm pt-10 px-2">
+      {/* <Heading as="p" className="text-sm md:text-sm lg:text-sm pt-10 px-2">
         Socials
       </Heading>
       {socials.map((link: Navlink) => (
@@ -97,7 +97,7 @@ export const Navigation = ({
           />
           <span>{link.label}</span>
         </Link>
-      ))}
+      ))} */}
     </div>
   );
 };
@@ -106,15 +106,15 @@ const SidebarHeader = () => {
   return (
     <div className="flex space-x-2">
       <Image
-        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80"
+        src="/images/profiles/upper-body-image.JPG"
         alt="Avatar"
         height="40"
         width="40"
         className="object-cover object-top rounded-full flex-shrink-0"
       />
       <div className="flex text-sm flex-col">
-        <p className="font-bold text-primary">John Doe</p>
-        <p className="font-light text-secondary">Developer</p>
+        <p className="font-bold text-primary">Hokyeong Choi</p>
+        <p className="font-light text-secondary">Front-end Developer</p>
       </div>
     </div>
   );
