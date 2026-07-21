@@ -54,10 +54,10 @@
 
 ## Phase 3. 데이터 모델링 & DB
 
-- [ ] Prisma 설치, `schema.prisma` 작성 (Post, User, Tag, Comment)
-- [ ] 마이그레이션 적용
-- [ ] Seed 스크립트로 더미 데이터 채우기
-- [ ] Prisma 클라이언트 wrapper에 대한 유닛 테스트(테스트 DB 사용) 작성
+- [x] Prisma 설치, `schema.prisma` 작성 (Post, Tag, User — Comment는 Phase 9에서 추가 예정). Prisma 7의 새 driver adapter 구조(`@prisma/adapter-pg`) 적용
+- [x] 마이그레이션 적용 (`prisma/migrations/20260721075817_init`)
+- [x] Seed 스크립트로 더미 데이터 채우기 (`prisma/seed.ts` — Post 3개, Tag 4개, admin User 1명)
+- [x] Prisma 클라이언트 wrapper에 대한 유닛 테스트(테스트 DB `blog_test` 사용) 작성 — `src/lib/db.test.ts`
 - [ ] (선택) 규모 확장 시 Drizzle ORM과 비교 학습 — 최근 실무 채택 늘어나는 추세, 성능/타입추론 강점
 
 ## Phase 4. 백엔드 API (TDD)
