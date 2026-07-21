@@ -17,7 +17,7 @@
 ## 진행 원칙
 
 - **TDD**: 기능 단위(API, 컴포넌트, 로직)마다 "실패하는 테스트 작성 → 최소 구현으로 통과 → 리팩토링" 순서로 진행. 테스트 없이 구현부터 하지 않기.
-- **devlog**: `devlog/` 폴더에 날짜별 md 파일로 즉시 기록. 막힌 순간, 에러, 원인, 해결, 배운 점 위주 (완성된 글 아님, 5~10분 메모).
+- **devlog**: `docs/devlog/` 폴더에 날짜별 md 파일로 즉시 기록. 막힌 순간, 에러, 원인, 해결, 배운 점 위주 (완성된 글 아님, 5~10분 메모).
   - 템플릿: 상황 / 막힌 지점(에러 원문) / 원인 / 해결 / 배운 점 / 태그(`#nextjs #docker` 등)
   - Phase 끝날 때마다 devlog를 모아 포스트 초안으로 전환 (Claude에게 정리 요청 가능)
 - 아래 체크박스는 그때그때 진행 상황에 맞춰 체크해나가기. 순서는 참고용이며 상황에 따라 유동적으로 조정 가능.
@@ -32,7 +32,7 @@
   - **Tag**: id, name, slug — Post와 N:M 조인 테이블로 연결
   - **User**: id, email(로그인 식별자), passwordHash — 관리자 1인
 - [x] VPS/클라우드 사업자 결정: **AWS Lightsail**
-- [x] `devlog/` 폴더 + 템플릿 파일 생성
+- [x] `docs/devlog/` 폴더 + 템플릿 파일 생성
 
 ## Phase 1. 프로젝트 초기화
 
@@ -46,11 +46,11 @@
 
 > 기능을 만들기 전에 테스트 도구부터 세팅 — 이후 모든 Phase에서 TDD 사이클 적용
 
-- [ ] Vitest(or Jest) + React Testing Library 설치/설정
-- [ ] Playwright 설치, 기본 E2E 스모크 테스트(홈페이지 로드) 작성
-- [ ] `npm test`, `npm run test:e2e` 스크립트 및 watch 모드 확인
-- [ ] 간단한 유틸 함수 하나를 TDD로 만들어보며 사이클 연습 (예: 슬러그 생성 함수)
-- [ ] devlog: TDD 사이클 처음 돌려본 소감 기록
+- [x] Vitest + React Testing Library 설치/설정 (`vitest.config.ts`, `vitest.setup.ts`)
+- [x] Playwright 설치, 기본 E2E 스모크 테스트(홈페이지 로드) 작성 (`tests/home.spec.ts`, `webServer`로 dev 서버 자동 기동)
+- [x] `pnpm test`, `pnpm run test:e2e` 스크립트 및 watch 모드(`pnpm run test:watch`) 확인
+- [x] 간단한 유틸 함수 하나를 TDD로 만들어보며 사이클 연습 → `src/lib/slug.ts` 슬러그 생성 함수, Red→Green→Refactor 직접 수행
+- [x] devlog: TDD 사이클 처음 돌려본 소감 기록 (`docs/devlog/2026-07-21.md`)
 
 ## Phase 3. 데이터 모델링 & DB
 
